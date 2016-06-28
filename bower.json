@@ -1,0 +1,24 @@
+{
+  "name": "cleverlist.js",
+  "authors": [
+    "Kande Bonfim <kandebonfim@gmail.com>"
+  ],
+  "description": "Nice expressions from javascript objects.",
+  "main": "cleverlist.js",
+  "moduleType": [],
+  "keywords": [
+    "list",
+    "array",
+    "to_sentence",
+    "javascript"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
