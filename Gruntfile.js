@@ -5,16 +5,16 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     coffee: {
       compile: {
-        files: {'dist/<%= pkg.name %>.js': 'src/<%= pkg.name %>.coffee'}
+        files: {'dist/<%= pkg.raw_path %>.js': 'src/<%= pkg.raw_path %>.coffee'}
       },
     },
     uglify: {
       options: {
-        banner: '/*! <%= pkg.name %> - <%= pkg.authors %> - <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+        banner: '/*! <%= pkg.raw_path %> - <%= pkg.authors %> - <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
-        src: 'dist/<%= pkg.name %>.js',
-        dest: 'dist/<%= pkg.name %>.min.js'
+        src: 'dist/<%= pkg.raw_path %>.js',
+        dest: 'dist/<%= pkg.raw_path %>.min.js'
       }
     },
     watch: {

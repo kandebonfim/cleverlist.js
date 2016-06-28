@@ -5,6 +5,7 @@
   ],
   "description": "Nice expressions from javascript objects.",
   "main": "cleverlist.js",
+  "raw_path": "cleverlist",
   "moduleType": [],
   "keywords": [
     "list",
