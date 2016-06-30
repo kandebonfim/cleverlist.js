@@ -3,7 +3,7 @@
     function CleverList(content, limit1) {
       this.content = content;
       this.limit = limit1 != null ? limit1 : 3;
-      console.log((this.toSentence(this.content, this.limit)) + " liked your foto.");
+      this.result = (this.toSentence(this.content, this.limit)) + " liked your foto.";
     }
 
     CleverList.prototype.toSentence = function(arr, limit) {
@@ -19,6 +19,10 @@
       } else {
         return (arr.join(', ')) + " and " + last;
       }
+    };
+
+    CleverList.prototype.result = function() {
+      return this.result;
     };
 
     return CleverList;
