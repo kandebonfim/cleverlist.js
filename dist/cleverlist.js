@@ -28,10 +28,6 @@
       }
     };
 
-    CleverList.prototype.result = function() {
-      return "" + (this.toSentence(this.content)) + this.def.append;
-    };
-
     CleverList.prototype.addTemplate = function(template, settings) {
       return this.tpl[template] = settings;
     };
@@ -50,6 +46,29 @@
         }
       }
       return this.result();
+    };
+
+    CleverList.prototype.parseObject = function() {
+      var el, i, j, k, len, ref, results;
+      if (Array.isArray(this.content)) {
+        ref = this.content;
+        results = [];
+        for (k = j = 0, len = ref.length; j < len; k = ++j) {
+          i = ref[k];
+          el = document.createElement("a");
+          el.innerText = i[0];
+          el.href = i[1];
+          results.push(this.content[k] = el.outerHTML);
+        }
+        return results;
+      }
+    };
+
+    CleverList.prototype.result = function() {
+      if (this.def.type === 'link') {
+        this.parseObject();
+      }
+      return "" + (this.toSentence(this.content)) + this.def.append;
     };
 
     return CleverList;
