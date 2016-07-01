@@ -28,13 +28,13 @@ class @CleverList
     for i, k in @content
       el = document.createElement("a")
       if @wasObject
-        [el.innerText, el.href] = [@resolveobject('attributes.name', i), @resolveobject('attributes.url', i)]
+        [el.innerText, el.href] = [@resolveobject(@def.dataTitle, i), @resolveobject(@def.dataUrl, i)]
       else
         [el.innerText, el.href] = [i[0], i[1]]
       @content[k] = el.outerHTML
 
   objectToArray: ->
-    @content = @resolveobject('data', @content)
+    @content = @resolveobject(@def.dataRoot, @content)
     @wasObject = true
 
   resolveobject: (path, obj, safe) ->

@@ -57,7 +57,7 @@
         i = ref[k];
         el = document.createElement("a");
         if (this.wasObject) {
-          ref1 = [this.resolveobject('attributes.name', i), this.resolveobject('attributes.url', i)], el.innerText = ref1[0], el.href = ref1[1];
+          ref1 = [this.resolveobject(this.def.dataTitle, i), this.resolveobject(this.def.dataUrl, i)], el.innerText = ref1[0], el.href = ref1[1];
         } else {
           ref2 = [i[0], i[1]], el.innerText = ref2[0], el.href = ref2[1];
         }
@@ -67,7 +67,7 @@
     };
 
     CleverList.prototype.objectToArray = function() {
-      this.content = this.resolveobject('data', this.content);
+      this.content = this.resolveobject(this.def.dataRoot, this.content);
       return this.wasObject = true;
     };
 
