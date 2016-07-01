@@ -24,12 +24,23 @@ class @CleverList
     @result()
 
   parseObject: ->
-    if Array.isArray(@content)
-      for i, k in @content
-        el = document.createElement("a")
-        el.innerText = i[0]
-        el.href = i[1]
-        @content[k] = el.outerHTML
+    @objectToArray()
+    for i, k in @content
+      el = document.createElement("a")
+      if @wasObject
+        [el.innerText, el.href] = [@resolveobject('attributes.name', i), @resolveobject('attributes.url', i)]
+      else
+        [el.innerText, el.href] = [i[0], i[1]]
+      @content[k] = el.outerHTML
+
+  objectToArray: ->
+    @content = @content['data']
+    @wasObject = true
+
+  resolveobject: (path, obj, safe) ->
+    path.split('.').reduce ((prev, curr) ->
+      if !safe then prev[curr] else if prev then prev[curr] else undefined
+    ), obj or self
 
   result: ->
     if @def.type is 'link' then @parseObject()
