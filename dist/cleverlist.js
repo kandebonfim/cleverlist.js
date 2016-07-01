@@ -61,6 +61,9 @@
         } else {
           ref2 = [i[0], i[1]], el.innerText = ref2[0], el.href = ref2[1];
         }
+        if (this.def.classList) {
+          el.classList = this.def.classList;
+        }
         results.push(this.content[k] = el.outerHTML);
       }
       return results;
@@ -84,6 +87,7 @@
     };
 
     CleverList.prototype.result = function() {
+      this.wasObject = false;
       if (this.def.type === 'link') {
         this.objectToLink();
       }

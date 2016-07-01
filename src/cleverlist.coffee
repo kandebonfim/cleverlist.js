@@ -31,6 +31,7 @@ class @CleverList
         [el.innerText, el.href] = [@resolveobject(@def.dataTitle, i), @resolveobject(@def.dataUrl, i)]
       else
         [el.innerText, el.href] = [i[0], i[1]]
+      if @def.classList then el.classList = @def.classList
       @content[k] = el.outerHTML
 
   objectToArray: ->
@@ -43,5 +44,6 @@ class @CleverList
     ), obj or self
 
   result: ->
+    @wasObject = false
     if @def.type is 'link' then @objectToLink()
     "#{@toSentence(@content)}#{@def.append}"
