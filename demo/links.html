@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo - Cleverlist.js</title>
+  <script src="../dist/cleverlist.js"></script>
+</head>
+<body>
+  <script>
+    ClvLst = new CleverList;
+    ClvLst.addTemplate('links', {
+      type: 'link'
+    });
+
+    var list = [
+      ['Kande', 'http://kande.com'],
+      ['Thomas', 'http://thomas.com'],
+      ['Kebab', 'http://kebab.com'],
+      ['Yehuda', 'http://yehuda.com'],
+      ['Mark Otto', 'http://markotto.com'],
+      ['Your Mom', 'http://yourmom.com'],
+      ['Dollynho', 'http://dollynho.com'],
+    ];
+
+    console.log( ClvLst.withTemplate('links', list) );
+  </script>
+</body>
+</html>
