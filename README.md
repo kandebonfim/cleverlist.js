@@ -1,7 +1,7 @@
 cleverlist.js
 Nice expressions from javascript objects.
 
-[Check the demo here](http://codepen.io/kandebonfim/pen/pydMwv).
+[Check the demo here](http://codepen.io/kandebonfim/pen/OXmjXk).
 
 #### Development
 Watch and compile assets:
