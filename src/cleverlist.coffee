@@ -19,8 +19,8 @@ class @CleverList
   withTemplate: (template, content) ->
     @content = content
     if @tpl[template] then currentTemplate = @tpl[template] else console.error 'Template not found.'
-    for k of @def
-      if currentTemplate[k] then @def[k] = currentTemplate[k]
+    for k of currentTemplate
+      @def[k] = currentTemplate[k]
     @result()
 
   objectToLink: ->

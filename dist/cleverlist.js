@@ -40,10 +40,8 @@
       } else {
         console.error('Template not found.');
       }
-      for (k in this.def) {
-        if (currentTemplate[k]) {
-          this.def[k] = currentTemplate[k];
-        }
+      for (k in currentTemplate) {
+        this.def[k] = currentTemplate[k];
       }
       return this.result();
     };
