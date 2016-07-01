@@ -23,7 +23,7 @@ class @CleverList
       if currentTemplate[k] then @def[k] = currentTemplate[k]
     @result()
 
-  parseObject: ->
+  objectToLink: ->
     @objectToArray()
     for i, k in @content
       el = document.createElement("a")
@@ -34,7 +34,7 @@ class @CleverList
       @content[k] = el.outerHTML
 
   objectToArray: ->
-    @content = @content['data']
+    @content = @resolveobject('data', @content)
     @wasObject = true
 
   resolveobject: (path, obj, safe) ->
@@ -43,5 +43,5 @@ class @CleverList
     ), obj or self
 
   result: ->
-    if @def.type is 'link' then @parseObject()
+    if @def.type is 'link' then @objectToLink()
     "#{@toSentence(@content)}#{@def.append}"

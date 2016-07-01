@@ -48,7 +48,7 @@
       return this.result();
     };
 
-    CleverList.prototype.parseObject = function() {
+    CleverList.prototype.objectToLink = function() {
       var el, i, j, k, len, ref, ref1, ref2, results;
       this.objectToArray();
       ref = this.content;
@@ -67,7 +67,7 @@
     };
 
     CleverList.prototype.objectToArray = function() {
-      this.content = this.content['data'];
+      this.content = this.resolveobject('data', this.content);
       return this.wasObject = true;
     };
 
@@ -85,7 +85,7 @@
 
     CleverList.prototype.result = function() {
       if (this.def.type === 'link') {
-        this.parseObject();
+        this.objectToLink();
       }
       return "" + (this.toSentence(this.content)) + this.def.append;
     };
