@@ -24,7 +24,7 @@ class @CleverList
     @result()
 
   objectToLink: ->
-    @objectToArray()
+    unless Array.isArray(@content) then @objectToArray()
     for i, k in @content
       el = document.createElement("a")
       if @wasObject

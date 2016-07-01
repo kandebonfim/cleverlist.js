@@ -50,7 +50,9 @@
 
     CleverList.prototype.objectToLink = function() {
       var el, i, j, k, len, ref, ref1, ref2, results;
-      this.objectToArray();
+      if (!Array.isArray(this.content)) {
+        this.objectToArray();
+      }
       ref = this.content;
       results = [];
       for (k = j = 0, len = ref.length; j < len; k = ++j) {
