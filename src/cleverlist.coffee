@@ -8,6 +8,7 @@ class @CleverList
       comma: ', '
       limit: 3
       type: 'string'
+    @result = @result()
 
   toSentence: (arr) ->
     if arr.length > @def.limit+1 then last = "#{arr.length-@def.limit}#{@def.others}"; arr = arr.splice(0,@def.limit) else last = arr.pop()

@@ -11,6 +11,7 @@
         limit: 3,
         type: 'string'
       };
+      this.result = this.result();
     }
 
     CleverList.prototype.toSentence = function(arr) {
