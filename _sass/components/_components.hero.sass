@@ -18,11 +18,17 @@
 
 .hero__phrase
   font-size: 120%
-  margin: 10px 0 50px
+  margin: 10px 0 1.4em
   opacity: .8
 
 .hero__demo
   display: flex
+
+  +respond-to(small)
+    flex-direction: column
+
+  > *
+    align-self: center
 
 .hero__code
   max-height: 170px
@@ -33,14 +39,18 @@
   &.hljs
     display: block
 
+  +respond-to(small)
+    max-width: 70vw
+    max-height: 80px
+
 .hero__arrow
   opacity: .4
-  align-self: center
   margin: 0 .8em
 
-.hero__result
-  align-self: center
+  +respond-to(small)
+    transform: rotate(90deg)
 
+.hero__result
   .fa
     margin-right: 4px
     color: #F44336
