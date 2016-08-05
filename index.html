@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Show your terms! - Simple demos of your applications' terminal commands.</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Show your terms!"/>
+    <meta property="og:description" content="Simple demos of your applications' terminal commands."/>
+    <meta property="og:image" content="https://kandebonfim.github.io/show-your-terms/images/og.jpg"/>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/application.css" media="screen">
+    <script src="bower_components/show-your-terms/dist/show-your-terms.min.js"></script>
+  </head>
+  <body>
+    <div class="hero text-align-center">
+      <div class="gth-buttons">
+        <iframe src="https://ghbtns.com/github-btn.html?user=kandebonfim&repo=show-your-terms&type=star&count=true" frameborder="0" scrolling="0" width="90px" height="20px"></iframe>
+        <iframe src="https://ghbtns.com/github-btn.html?user=kandebonfim&type=follow&count=true" frameborder="0" scrolling="0" width="176px" height="20px"></iframe>
+      </div>
+      <div class="container">
+        <img class="hero__logo" src="images/show-your-terms-logo.svg">
+        <h3 class="hero__phrase">Simple demos of your applications' terminal commands.</h3>
+        <div class="showyourterms js-syt">
+          <div class="type" data-action="command" data-delay="400">Hello, show your terms!</div>
+          <div class="line yellow" data-delay="400">hi, motherfocka!</div>
+          <div class="type" data-action="command" data-delay="400">What is your name?</div>
+          <div class="line yellow" data-delay="4000">My name is Terms, Show Your Terms.</div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <h3 class="section__title">Why?</h3>
+        <p class="section__paragraph">CLI interactions are confusing to understand at first sight because the commands are mixed with the application response.</p>
+        <p class="section__paragraph">It's very important to be didactic to your users and Show your terms! can help you with that!</p>
+
+        <h3 class="section__title">Size & Performance</h3>
+        <p class="section__paragraph">Show your terms! script has just ~1.8Kb minified and its performance-aware and <a href="https://snook.ca/archives/javascript/be_library_agnostic" target="_blank">library agnostic</a>. The CSS file has ~1.4Kb and is <a href="#styles">optional</a>.</p>
+
+        <h3 class="section__title"><a href="#instalation" id="instalation">Instalation</a></h3>
+        <p class="section__paragraph">Enjoying a package manager?</p>
+        <div class="showyourterms" data-title='bower'>
+          <div class="command">bower install show-your-terms</div>
+        </div>
+        <div class="showyourterms" data-title='npm'>
+          <div class="command">npm install show-your-terms</div>
+        </div>
+        <br>
+
+        <p class="section__paragraph">Import it using <a href="https://rawgit.com/" target="_blank">rawgit.com</a>:</p>
+        <pre><code class="html">
+  &lt;!-- javascript --&gt;
+  &lt;script type='text/javascript' src='https://cdn.rawgit.com/kandebonfim/show-your-terms/master/dist/show-your-terms.min.js'&gt;&lt;/script&gt;
+  &lt;!-- stylesheet --&gt;
+  &lt;link rel='stylesheet' href='https://cdn.rawgit.com/kandebonfim/show-your-terms/master/dist/show-your-terms.min.css'&gt;
+        </code></pre>
+        <br>
+
+        <p class="section__paragraph">Or just <a href="https://github.com/kandebonfim/show-your-terms/archive/master.zip">↓ download the zip file ↓</a>.</p>
+
+        <h3 class="section__title"><a href="#usage" id="usage">Usage</a></h3>
+        <p class="section__paragraph">You can use Show your terms! in <strong>declarative</strong> way (recommended):</p>
+        <pre><code class="html">
+  &lt;div class='showyourterms'&gt;
+    &lt;div class='type' data-action='command' data-delay='400'&gt;Hello, show your terms!&lt;/div&gt;
+    &lt;div class='line yellow' data-delay='400'&gt;hi, motherfocka!&lt;/div&gt;
+    &lt;div class='type' data-action='command' data-delay='400'&gt;What is your name?&lt;/div&gt;
+    &lt;div class='line yellow' data-delay='4000'&gt;My name is Terms, Show Your Terms.&lt;/div&gt;
+  &lt;/div&gt;
+        </code></pre>
+        <p class="section__paragraph">And initialize it running:</p>
+        <pre><code class="js">
+  new ShowYourTerms('.showyourterms');
+        </code></pre>
+        <br>
+        <p class="section__paragraph">Or you can do it in the <strong>programmatically</strong> way:</p>
+        <pre><code class="html">
+  &lt;div class='showyourterms'&gt;&lt;/div&gt;
+        </code></pre>
+        <p class="section__paragraph">Adding the content via js:</p>
+        <pre><code class="js">
+  var syt = new ShowYourTerms('.showyourterms');
+  syt.addCommand('Hello, show your terms!');
+  syt.addLine('hi, motherfocka!');
+  syt.addCommand('What is your name?');
+  syt.addLine('My name is Terms, Show Your Terms.');
+  syt.play();
+        </code></pre>
+        <br>
+
+        <p class="section__paragraph">There's a <a href="http://codepen.io/kandebonfim/pen/pydMwv" target="_blank">codepen demo</a> available too.</p>
+
+        <h3 class="section__title"><a href="#styles" id="styles">Styles</a></h3>
+        <p class="section__paragraph">Show Your Terms' styles are optional, but pretty nice!</p>
+        <div class="showyourterms">
+          <div class="command">This is a command.</div>
+          <div class="type">This is a type line.</div>
+          <div class="red">This is red line.</div>
+          <div class="yellow">This is yellow line.</div>
+          <div class="green">This is green line.</div>
+          <div class="blue">This is blue line.</div>
+          <div class="grey">This is grey line.</div>
+          <div class="blink">This line blinks.</div>
+          <div class="underlined">And this one is underlined.</div>
+          <div class="type active">The cursor blinks while typing...</div>
+          <div class="command active">...and while typing a command too.</div>
+        </div>
+
+        <h3 class="section__title"><a href="#themes" id="themes">Themes</a></h3>
+        <p class="section__paragraph">You can choose which color scheme matchs better with your website:</p>
+        <div class="showyourterms" data-title="Regular">
+          <div class="type">So, how you doing?</div>
+          <div class="grey">hmpf, pretty standart.</div>
+        </div>
+        <div class="showyourterms dark" data-title="Dark">
+          <div class="type">hm, and now?</div>
+          <div class="grey">dude, I'm so dark and goth.</div>
+        </div>
+        <div class="showyourterms light" data-title="Light">
+          <div class="type">how about this one?</div>
+          <div class="grey">I see the light! AND IT HURTS!</div>
+        </div>
+
+        <h3 class="section__title">That's it</h3>
+        <p class="section__paragraph">Happy coding, Folks! ☕️</p>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container text-align-center">Created by <a href="http://www.kandebonfim.com/" target="_blank">Kande Bonfim</a> and supported by <a href="http://www.startae.com/" target="_blank">Startaê Team</a> under <a href="https://mit-license.org/" target="_blank">MIT License</a>.</div>
+    </div>
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/monokai-sublime.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- main scripts -->
+    <script src="javascript/application.js"></script>
+
+    <!-- Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-72298904-4', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
