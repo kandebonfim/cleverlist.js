@@ -2,19 +2,45 @@
 // @name hero
 
 .hero
-  padding-top: 60px
+  min-height: 100vh
+  background: linear-gradient(45deg, $c-purple-dark 0%, $c-purple 70%, $c-blue 100%)
+  display: flex
+  flex-direction: column
+  justify-content: center
 
-  +respond-to(medium)
-    padding-top: 100px
+.hero__content
+  align-self: center
+  padding: 1em 0
 
-.hero__logo
-  max-width: 70%
-
-  +respond-to(medium)
-    max-width: 50%
+.hero__title
+  font-size: 360%
+  font-weight: bolder
 
 .hero__phrase
+  font-size: 120%
   margin: 10px 0 50px
+  opacity: .8
 
-  +respond-to(medium)
-    font-size: 24px
+.hero__demo
+  display: flex
+
+.hero__code
+  max-height: 170px
+  max-width: 310px
+  padding: 1em !important
+  display: none
+
+  &.hljs
+    display: block
+
+.hero__arrow
+  opacity: .4
+  align-self: center
+  margin: 0 .8em
+
+.hero__result
+  align-self: center
+
+  .fa
+    margin-right: 4px
+    color: #F44336

@@ -2,11 +2,14 @@
 // @name body
 
 body
-  background-color: $c-purple
+  background-color: #141832
   color: white
   font-weight: lighter
-  font-family: "Open Sans", Helvetica, sans-serif
+  font-family: "Montserrat", Helvetica, sans-serif
   line-height: 1.4
+
+  +respond-to(small)
+    font-size: .8em
 
 .wf-loading
   h3, h4, p, span, a

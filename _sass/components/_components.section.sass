@@ -5,10 +5,11 @@
   padding: 60px 0
 
 .section__title
-  font-size: 18px
+  font-size: 160%
   padding-bottom: 3px
-  border-bottom: 1px solid rgba(white, .2)
+  margin-bottom: 3px
   font-weight: 900
+  position: relative
 
   * + &
     margin-top: 50px
@@ -29,9 +30,19 @@
     &:hover:before
       opacity: .8
 
+  &:after
+    content: ''
+    width: 18px
+    height: 3px
+    position: absolute
+    background-color: $c-indigo
+    left: 0
+    bottom: -6px
+
 .section__paragraph
   margin: 14px 0
   opacity: .8
+  font-size: 110%
 
   +respond-to(small)
     font-size: 14px
