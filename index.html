@@ -8,32 +8,87 @@
     <meta property="og:title" content="Show your terms!"/>
     <meta property="og:description" content="Simple demos of your applications' terminal commands."/>
     <meta property="og:image" content="https://kandebonfim.github.io/show-your-terms/images/og.jpg"/>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/application.css" media="screen">
     <script src="bower_components/show-your-terms/dist/show-your-terms.min.js"></script>
   </head>
   <body>
-    <div class="hero text-align-center">
+    <div class="hero">
       <div class="gth-buttons">
-        <iframe src="https://ghbtns.com/github-btn.html?user=kandebonfim&repo=show-your-terms&type=star&count=true" frameborder="0" scrolling="0" width="90px" height="20px"></iframe>
+        <iframe src="https://ghbtns.com/github-btn.html?user=kandebonfim&repo=cleverlist.js&type=star&count=true" frameborder="0" scrolling="0" width="90px" height="20px"></iframe>
         <iframe src="https://ghbtns.com/github-btn.html?user=kandebonfim&type=follow&count=true" frameborder="0" scrolling="0" width="176px" height="20px"></iframe>
       </div>
-      <div class="container">
-        <img class="hero__logo" src="images/show-your-terms-logo.svg">
-        <h3 class="hero__phrase">Simple demos of your applications' terminal commands.</h3>
-        <div class="showyourterms js-syt">
-          <div class="type" data-action="command" data-delay="400">Hello, show your terms!</div>
-          <div class="line yellow" data-delay="400">hi, motherfocka!</div>
-          <div class="type" data-action="command" data-delay="400">What is your name?</div>
-          <div class="line yellow" data-delay="4000">My name is Terms, Show Your Terms.</div>
+      <div class="hero__content">
+        <div class="hero__title text-align-center">Cleverlist.js</div>
+        <h3 class="hero__phrase text-align-center">Readable expressions from javascript objects.</h3>
+        <div class="hero__demo">
+          <pre><code class="hero__code json">{
+  "data": [{
+    "type": "people",
+    "id": "1",
+    "attributes": {
+      "name": "Kande",
+      "url": "http://kandebonfim.com"
+     }
+   },{
+     "type": "person",
+        "id": "2",
+        "attributes": {
+          "name": "Thomas",
+          "url": "http://thomas.com"
+        }
+      },{
+        "type": "person",
+        "id": "3",
+        "attributes": {
+          "name": "Kebab",
+          "url": "http://kebab.com"
+        }
+      },{
+        "type": "person",
+        "id": "4",
+        "attributes": {
+          "name": "Yehuda",
+          "url": "http://yehuda.com"
+        }
+      },{
+        "type": "person",
+        "id": "5",
+        "attributes": {
+          "name": "Mark Otto",
+          "url": "http://markotto.com"
+        }
+      },{
+        "type": "person",
+        "id": "6",
+        "attributes": {
+          "name": "Your Mom",
+          "url": "http://yourmom.com"
+        }
+      },{
+        "type": "person",
+        "id": "7",
+        "attributes": {
+          "name": "Dollynho",
+          "url": "http://dollynho.com"
+        }
+      }]
+    }
+          </pre></code>
+          <div class="hero__arrow fa fa-3x fa-angle-right"></div>
+          <div class="hero__result">
+            <div class="fa fa-lg fa-heart"></div>
+            Kande, Thomas and 4 others liked this.
+          </div>
         </div>
       </div>
     </div>
     <div class="section">
       <div class="container">
         <h3 class="section__title">Why?</h3>
-        <p class="section__paragraph">CLI interactions are confusing to understand at first sight because the commands are mixed with the application response.</p>
-        <p class="section__paragraph">It's very important to be didactic to your users and Show your terms! can help you with that!</p>
+        <p class="section__paragraph">Sometimes you have a huge amount of data to be shown but you want your user to have a sum up version of it.</p>
+        <p class="section__paragraph">Cleverlist.js converts your complex data into a readable excerpt to the user.</p>
 
         <h3 class="section__title">Size & Performance</h3>
         <p class="section__paragraph">Show your terms! script has just ~1.8Kb minified and its performance-aware and <a href="https://snook.ca/archives/javascript/be_library_agnostic" target="_blank">library agnostic</a>. The CSS file has ~1.4Kb and is <a href="#styles">optional</a>.</p>
